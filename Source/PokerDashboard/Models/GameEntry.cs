@@ -8,6 +8,11 @@ namespace PokerDashboard.Models
     public class GameEntry
     {
         /// <summary>
+        /// Id of the game.
+        /// </summary>
+        public int Id { get; set; }
+
+        /// <summary>
         /// The date when the game happened.
         /// </summary>
         public DateTime Date { get; set; }

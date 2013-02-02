@@ -1,4 +1,5 @@
-﻿using PokerDashboard.Repository;
+﻿using System.Collections.Generic;
+using PokerDashboard.Repository;
 using System.Web.Mvc;
 using PokerDashboard.Models;
 
@@ -17,13 +18,6 @@ namespace PokerDashboard.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "Your app description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
 
             return View();
         }
