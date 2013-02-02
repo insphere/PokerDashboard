@@ -12,10 +12,10 @@
 <table class="table table-striped">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.Rank)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Rank)
+            @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Balance)
@@ -38,10 +38,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
+            @Html.DisplayFor(modelItem => item.Rank)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Rank)
+            @Html.ActionLink(@Html.DisplayFor(modelItem => item.Name).ToString(), "Player",new { id=item.Id  })
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Balance)

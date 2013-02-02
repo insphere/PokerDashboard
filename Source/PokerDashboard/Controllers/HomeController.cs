@@ -1,10 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using PokerDashboard.Repository;
 using System.Web.Mvc;
 
 namespace PokerDashboard.Controllers
 {
-    using PokerDashboard.Repository;
-
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -29,11 +27,12 @@ namespace PokerDashboard.Controllers
             return View();
         }
 
-        public ActionResult Player()
+        public ActionResult Player(int id)
         {
             ViewBag.Message = "Player page.";
 
-            return View();
+            IPlayerRepository repository = new PlayerRepository();
+            return View(repository.Get(id));
         }
     }
 }
