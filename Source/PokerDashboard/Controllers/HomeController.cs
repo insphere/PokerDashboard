@@ -1,5 +1,6 @@
 ﻿using PokerDashboard.Repository;
 using System.Web.Mvc;
+using PokerDashboard.Models;
 
 namespace PokerDashboard.Controllers
 {
@@ -33,6 +34,13 @@ namespace PokerDashboard.Controllers
 
             IPlayerRepository repository = new PlayerRepository();
             return View(repository.Get(id));
+        }
+
+        public ActionResult Games()
+        {
+            ViewBag.Message = "Games list.";
+
+            return View(new List<GameEntry>());
         }
     }
 }

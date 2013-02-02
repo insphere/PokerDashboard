@@ -1,0 +1,55 @@
+﻿@model IEnumerable<PokerDashboard.Models.GameEntry>
+
+@{
+    ViewBag.Title = "Games";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Games</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WinnerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WinnerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WinnerHand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlayerCount)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WinnerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WinnerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WinnerHand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlayerCount)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
