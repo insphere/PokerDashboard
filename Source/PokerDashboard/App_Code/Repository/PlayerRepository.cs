@@ -8,7 +8,7 @@
     /// <summary>
     /// Performes CRUD operations for <see cref="Player"/> model.
     /// </summary>
-    public class PlayerRepository : IPlayerRepository
+    public class PlayerRepository : IModelRepository<Player>
     {
         /// <summary>
         /// Gets a player by the specified ID.

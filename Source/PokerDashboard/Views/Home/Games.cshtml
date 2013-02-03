@@ -7,47 +7,35 @@
 
 <h2>Games</h2>
 
-<table class="table">
+<table class="table table-striped">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Date)
+            Date
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.WinnerId)
+            Winner
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.WinnerName)
+            Hand Won
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.WinnerHand)
+            Players Count
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PlayerCount)
-        </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Date)
+            @Html.ActionLink(@Html.DisplayFor(modelItem => item.Date).ToString(), "Game", new { id=item.Id  })
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.WinnerId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.WinnerName)
+            @Html.ActionLink(@Html.DisplayFor(modelItem => item.WinnerName).ToString(), "Player", new { id=item.WinnerId  })
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.WinnerHand)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PlayerCount)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
         </td>
     </tr>
 }
