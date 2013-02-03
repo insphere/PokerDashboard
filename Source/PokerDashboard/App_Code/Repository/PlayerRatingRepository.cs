@@ -7,9 +7,9 @@ namespace PokerDashboard.Repository
     using PokerDashboard.Models;
 
     /// <summary>
-    /// Performs CRUD operations for <see cref="PlayerRating"/> model.
+    /// Performs CRUD operations for <see cref="PlayerRating"/> view model.
     /// </summary>
-    public class PlayerRatingRepository : IPlayerRatingRepository
+    public class PlayerRatingRepository : IViewModelRepository<PlayerRating>
     {
         /// <summary>
         /// Gets all the player ratings.
@@ -17,7 +17,7 @@ namespace PokerDashboard.Repository
         /// <returns>The <see cref="List{PlayerRating}"/>.</returns>
         public List<PlayerRating> Get()
         {
-            using (PokerDashboardDB context = new PokerDashboardDB())
+            using (PokerDashboardDB context = PokerDashboardDB.Create())
             {
                 return
                    (from player in context.Players

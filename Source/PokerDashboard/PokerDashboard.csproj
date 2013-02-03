@@ -135,7 +135,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Code\Repository\IPlayerRatingRepository.cs" />
+    <Content Include="App_Code\Repository\GameRepository.cs" />
+    <Compile Include="App_Code\Repository\GameEntryRepository.cs" />
+    <Compile Include="App_Code\Repository\IViewModelRepository.cs" />
     <Compile Include="App_Code\Repository\PlayerRatingRepository.cs" />
     <Compile Include="Data\Game.cs">
       <DependentUpon>PokerDashboardDBContext.tt</DependentUpon>
@@ -146,6 +148,7 @@
     <Compile Include="Data\Player.cs">
       <DependentUpon>PokerDashboardDBContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\PokerDashboardDB.cs" />
     <Compile Include="Data\PokerDashboardDBContext.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

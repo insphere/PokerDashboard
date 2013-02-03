@@ -1,3 +1,5 @@
+using System.Web.Razor;
+
 namespace PokerDashboard.Controllers
 {
     using System.Collections.Generic;
@@ -12,7 +14,7 @@ namespace PokerDashboard.Controllers
         {
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
 
-            IPlayerRatingRepository repository = new PlayerRatingRepository();
+            IViewModelRepository<PlayerRating> repository = new PlayerRatingRepository();
             return this.View(repository.Get());
         }
 
@@ -35,7 +37,9 @@ namespace PokerDashboard.Controllers
         {
             ViewBag.Message = "Games list.";
 
-            return View(new List<GameEntry>());
+            IViewModelRepository<GameEntry> repository = new GameEntryRepository();
+
+            return View(repository.Get());
         }
 
         public ActionResult Game()

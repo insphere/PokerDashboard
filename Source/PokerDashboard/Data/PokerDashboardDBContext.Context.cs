@@ -15,8 +15,8 @@ namespace PokerDashboard.Data
     
     public partial class PokerDashboardDB : DbContext
     {
-        public PokerDashboardDB()
-            : base("name=PokerDashboardDB")
+        public PokerDashboardDB(string connectionString)
+            : base(string.IsNullOrEmpty(connectionString) ? "name=PokerDashboardDB" : connectionString)
         {
         }
     
