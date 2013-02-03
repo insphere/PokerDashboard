@@ -1,9 +1,11 @@
-﻿using PokerDashboard.Repository;
+﻿using PokerDashboard.Models;
+using PokerDashboard.Repository;
 using System.Web.Mvc;
-using PokerDashboard.Models;
 
 namespace PokerDashboard.Controllers
 {
+    using System.Collections.Generic;
+
     public class HomeController : Controller
     {
         public ActionResult Index()

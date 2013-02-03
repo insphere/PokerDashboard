@@ -43,6 +43,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Data.SQLite, Version=1.0.84.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\System.Data.SQLite.1.0.84.0\lib\net40\System.Data.SQLite.dll</HintPath>
@@ -52,6 +53,8 @@
       <HintPath>..\packages\System.Data.SQLite.1.0.84.0\lib\net40\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -134,6 +137,30 @@
   <ItemGroup>
     <Compile Include="App_Code\Repository\IPlayerRatingRepository.cs" />
     <Compile Include="App_Code\Repository\PlayerRatingRepository.cs" />
+    <Compile Include="Data\Game.cs">
+      <DependentUpon>PokerDashboardDBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GamePlayer.cs">
+      <DependentUpon>PokerDashboardDBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Player.cs">
+      <DependentUpon>PokerDashboardDBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\PokerDashboardDBContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PokerDashboardDBContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\PokerDashboardDBContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PokerDashboardDBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\PokerDashboardDBContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PokerDashboardDBContext.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\GameEntry.cs" />
     <Compile Include="Models\PlayerRating.cs" />
     <Compile Include="App_Code\Repository\PlayerRepository.cs" />
@@ -220,6 +247,23 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="App_Data\pd.sqlite" />
+    <EntityDeploy Include="Data\PokerDashboardDBContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PokerDashboardDBContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Data\PokerDashboardDBContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PokerDashboardDBContext.edmx</DependentUpon>
+      <LastGenOutput>PokerDashboardDBContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\PokerDashboardDBContext.edmx.diagram">
+      <DependentUpon>PokerDashboardDBContext.edmx</DependentUpon>
+    </Content>
+    <Content Include="Data\PokerDashboardDBContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PokerDashboardDBContext.edmx</DependentUpon>
+      <LastGenOutput>PokerDashboardDBContext.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -270,6 +314,10 @@
     <Content Include="Views\Home\Player.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Games.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
