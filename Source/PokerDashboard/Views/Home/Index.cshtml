@@ -4,11 +4,8 @@
     ViewBag.Title = "Rating";
 }
 
-<h2>Index</h2>
+<h2>Rating</h2>
 
-@*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
 <table class="table table-striped">
     <tr>
         <th>
@@ -41,7 +38,7 @@
             @Html.DisplayFor(modelItem => item.Rank)
         </td>
         <td>
-            @Html.ActionLink(@Html.DisplayFor(modelItem => item.Name).ToString(), "Player",new { id=item.Id  })
+            @Html.ActionLink(@Html.DisplayFor(modelItem => item.Name).ToString(), "Player", new { id=item.Id  })
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Balance)
@@ -58,11 +55,6 @@
         <td>
             @Html.DisplayFor(modelItem => item.GamesThirdPlace)
         </td>
-        @*<td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>*@
     </tr>
 }
 
