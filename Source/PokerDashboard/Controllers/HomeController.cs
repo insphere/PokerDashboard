@@ -26,7 +26,7 @@ namespace PokerDashboard.Controllers
         {
             ViewBag.Message = "Player page.";
 
-            IPlayerRepository repository = new PlayerRepository();
+            IModelRepository<Player> repository = new PlayerRepository();
             return View(repository.Get(id));
         }
 
@@ -35,6 +35,13 @@ namespace PokerDashboard.Controllers
             ViewBag.Message = "Games list.";
 
             return View(new List<GameEntry>());
+        }
+
+        public ActionResult Game()
+        {
+            ViewBag.Message = "Game page.";
+
+            return View(new Game());
         }
     }
 }

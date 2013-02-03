@@ -137,7 +137,7 @@
     <Compile Include="Models\GameEntry.cs" />
     <Compile Include="Models\PlayerRating.cs" />
     <Compile Include="App_Code\Repository\PlayerRepository.cs" />
-    <Compile Include="App_Code\Repository\IPlayerRepository.cs" />
+    <Compile Include="App_Code\Repository\IModelRepository.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
