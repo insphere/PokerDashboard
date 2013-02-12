@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace PokerDashboard.Models
 {
@@ -15,6 +16,7 @@ namespace PokerDashboard.Models
         /// <summary>
         /// The date when the game happened.
         /// </summary>
+        [DisplayFormat(DataFormatString = "{0:d}")]
         public DateTime Date { get; set; }
 
         /// <summary>
