@@ -15,7 +15,7 @@ namespace PokerDashboard.Data
             string baseFolder = AppDomain.CurrentDomain.BaseDirectory;
 
             string sqlLiteConnectionString = string.Format(
-                "data source=\"{0}\";datetimeformat=Ticks",
+                "data source=\"{0}\";",
                 Path.Combine(baseFolder, "App_Data\\pd.sqlite"));
 
             string entityConnectionString = new EntityConnectionStringBuilder
