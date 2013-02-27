@@ -11,6 +11,12 @@
 
             // To view single Game
             routes.MapRoute(
+                name: "NewGameRoute",
+                url: "NewGame/",
+                defaults: new { controller = "Games", action = "NewGame" });
+
+            // To view single Game
+            routes.MapRoute(
                 name: "GameDefault",
                 url: "Games/{id}",
                 defaults: new {controller = "Games", action = "Game"});

@@ -1,0 +1,52 @@
+﻿@model PokerDashboard.Models.Game
+
+@{
+    ViewBag.Title = "NewGame";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>NewGame</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Game</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BuyIn)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BuyIn)
+            @Html.ValidationMessageFor(model => model.BuyIn)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Date)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Date)
+            @Html.ValidationMessageFor(model => model.Date)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WinHand)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WinHand)
+            @Html.ValidationMessageFor(model => model.WinHand)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "List")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

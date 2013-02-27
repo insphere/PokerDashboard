@@ -21,6 +21,11 @@
         /// Gets or sets the player name.
         /// </summary>
         public string Name { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the player windows login.
+        /// </summary>
+        public string WindowsLogin { get; set; }
 
         #endregion
     }

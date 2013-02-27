@@ -38,7 +38,8 @@
                            {
                                Email = player.Email,
                                Id = (int)player.Id,
-                               Name = player.Name
+                               Name = player.Name,
+                               WindowsLogin = player.WindowsLogin
                            };
             }
         }
@@ -64,7 +65,8 @@
                 {
                     Email = player.Email,
                     Id = (int)player.Id,
-                    Name = player.Name
+                    Name = player.Name,
+                    WindowsLogin = player.WindowsLogin
                 }).ToList();
             }
         }
@@ -113,6 +115,7 @@
                 Data.Player dataPlayer = context.Players.Create();
                 dataPlayer.Email = player.Email;
                 dataPlayer.Name = player.Name;
+                dataPlayer.WindowsLogin = player.WindowsLogin;
 
                 context.Players.Add(dataPlayer);
                 context.SaveChanges();
@@ -140,6 +143,8 @@
 
                 dataPlayer.Email = player.Email;
                 dataPlayer.Name = player.Name;
+                dataPlayer.WindowsLogin = player.WindowsLogin;
+
                 context.SaveChanges();
                 return player;
             }

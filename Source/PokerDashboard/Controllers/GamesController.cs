@@ -6,6 +6,13 @@
 
     public class GamesController : Controller
     {
+        public ActionResult NewGame()
+        {
+            ViewBag.Message = "Create a new game.";
+
+            return View();
+        }
+
         public ActionResult List()
         {
             ViewBag.Message = "Games list.";

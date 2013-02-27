@@ -321,6 +321,7 @@
     <Content Include="Views\Players\Rating.cshtml" />
     <Content Include="Views\Games\List.cshtml" />
     <Content Include="Views\Games\Game.cshtml" />
+    <Content Include="Views\Games\NewGame.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
